@@ -1,0 +1,97 @@
+main.main
+	h1.visually-hidden Портфолио Бетокова Барасби
+
+	section.home
+		.home__slider.swiper-container
+			.swiper-wrapper
+
+				.home__slide.home__slide_first.swiper-slide
+					.home__item
+						h2.home__title I'm Barasbi Betokov
+						p.home__description Create awesome websites
+						button.home__button.btn(type="button") About me
+
+				.home__slide.home__slide_secong.swiper-slide
+					.home__item
+						h2.home__title My power booster
+						p.home__description Anything is good if it's made of chocolate
+						button.home__button.btn(type="button") View my work
+
+				.home__slide.home__slide_third.swiper-slide
+					.home__item
+						h2.home__title Front-end developer from Moscow, Russia
+						p.home__description The place where I grow with great inspiration
+						button.home__button.btn(type="button") What i do
+
+	section.about
+		.container
+			.about__column
+				.about__img
+					picture
+						source(srcset="img/me.webp" media="(min-width: 600px)" type="image/webp")
+						source(srcset="img/me.jpg" media="(min-width: 600px)")
+						source(srcset="img/me-mobile.webp" type="image/webp")
+						img(src="img/me-mobile.jpg" width="604" height="339" alt="Бетоков Барасби")
+			
+			.about__column
+				h2.about__title.main-title Обо мне
+				h3.about__subtitle
+					span Betokov Barasbi
+					span Front-end developer
+
+				.about__description
+					.about__slider.swiper-container
+						.swiper-wrapper
+							.swiper-slide
+								.about__item
+										p Привет, я front-end developer. Моя специализация: разработка клиентской части в веб-приложениях. Ищу компанию с дружным коллективом профессионалов, где смогу перенять хорошие навыки front-end разработчика и стать частью хорошей компании для дальнейшего ее развития.
+
+										p Начал свое обучение веб-разработке в 2017 году. При разработке веб-приложений применяю современные технологии. Мне нравится решать нестандартные задачи, для совершенствования своих умений.
+
+										p Верстаю сайты: семантично, кроссбраузерно, валидно, оптимизированно, резиново, адаптивно, доступно.
+
+						.swiper-scrollbar
+				
+				a.btn(href="resume.pdf" download) Скачать резюме
+	
+	section.education
+		.container
+			h2.education__title.main-title Образование
+			p.education__description Список законченых университетов
+
+			.list
+				.list__column.education__column
+					.list__block
+						p.list__year Август, 2016
+
+					.list__block
+						p.list__name Кабардино-Балкарский Государственный Университет
+							span Информатика и вычислительная техника
+
+				.list__column.education__column
+					.list__block
+						p.list__year Авг, 2019
+
+					.list__block
+						p.list__name МГТУ "СТАНКИН"
+							span Информатика и вычислительная техника
+
+	section.work
+		.container
+			h2.work__title.main-title Опыт работы
+			.work__block
+				p.work__description Список мест работ, на которых я работал. 
+				p.work__description Обязанности и стек технологий, которые я использовал в своей работе.
+
+			.list
+				.list__column.work__column
+					.list__block
+						p.list__year Авг, 2017
+						p.list__year.list__year_end Июль 2018
+
+					.list__block
+						p.list__name Lantana Studio
+							span html-верстальщик
+
+						p.work__do Верстка многостраничных сайтов, лендингов.
+						p.work__technology #[b Стек технологий: ] HTML5, CSS3, JQUERY, PHP, GIT.

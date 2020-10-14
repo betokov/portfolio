@@ -1,0 +1,136 @@
+.education {
+	background-color: #e8edec;
+	padding: 40px 0;
+	box-shadow: inset 0 1px 0 0 rgba(0, 0, 0, 0.05), inset 0 0.1em 0.1em 0 rgba(0, 0, 0, 0.025);
+	background-position: 0 0;
+	background-repeat: repeat;
+	background-image: url("../img/overlay.png");
+
+	@media (min-width: 1100px) {
+		padding: 100px 0;
+	}
+}
+
+.education__title {
+	margin-bottom: 20px;
+
+	@media (min-width: 1100px) {
+		margin-bottom: 40px;
+	}
+}
+
+.education__description {
+	text-align: center;
+	font-size: 16px;
+	margin: 0;
+	margin-bottom: 30px;
+
+	@media (min-width: 768px) {
+		margin-bottom: 50px;
+	}
+
+	@media (min-width: 1100px) {
+		font-size: 18px;
+	}
+}
+
+.education__column {
+	margin-bottom: 30px;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	@media (min-width: 768px) {
+		margin-bottom: 0;
+	}
+}
+
+.list__column {
+	@media (min-width: 768px) {
+		display: flex;
+	}
+}
+
+.list__block {
+	@media (min-width: 768px) {
+		position: relative;
+
+		&:first-child {
+			flex: 0 0 auto;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-end;
+
+			border-right: 1px dashed #5b4c5c;
+
+			padding-right: 40px;
+			padding-top: 40px;
+			padding-bottom: 60px;
+			margin-right: 80px;
+			min-width: 190px;
+
+			@media (min-width: 1280px) {
+				min-width: 195px;
+			}
+
+			&::after {
+				content: "";
+
+				position: absolute;
+				right: -10px;
+				top: 40px;
+
+				height: 20px;
+				width: 20px;
+
+				border: 4px solid #5b4c5c;
+				border-radius: 50%;
+			}
+		}
+	}
+}
+
+.list__year {
+	background-color: #ef7674;
+
+	margin: 0;
+	margin-bottom: 20px;
+	padding: 20px;
+
+	font-size: 17px;
+	color: #fff;
+	font-weight: 700;
+
+	@media (min-width: 1280px) {
+		font-size: 18px;
+	}
+}
+
+.list__name {
+	margin: 0;
+
+	font-weight: 700;
+	font-size: 16px;
+	color: #5b4c5c;
+	text-transform: uppercase;
+
+	@media (min-width: 1280px) {
+		font-size: 20px;
+	}
+}
+
+.list__name span {
+	text-transform: none;
+	font-weight: 400;
+	color: #000000;
+	font-size: 15px;
+
+	margin-top: 10px;
+
+	display: block;
+
+	@media (min-width: 1280px) {
+		font-size: 18px;
+	}
+}
