@@ -91,7 +91,7 @@ window.onload = () => {
 
 			var value = Math.round(circle.value() * 100);
 			if (value === 0) {
-				circle.setText('');
+				circle.setText('0%');
 			} else {
 				circle.setText(value + "%");
 			}
@@ -106,16 +106,33 @@ window.onload = () => {
 		jsSkill = new ProgressBar.Circle(".skills__skill_js", progressBar),
 		jquerySkill = new ProgressBar.Circle(".skills__skill_jquery", progressBar),
 		gulpSkill = new ProgressBar.Circle(".skills__skill_gulp", progressBar),
-		phpSkill = new ProgressBar.Circle(".skills__skill_php", progressBar);
+		phpSkill = new ProgressBar.Circle(".skills__skill_php", progressBar),
+		skillsBlockOffsetTop = document.querySelector('.extension').offsetTop;
+
+	if (window.innerWidth >= 1000) {
+		if (window.pageYOffset >= skillsBlockOffsetTop - window.innerHeight) {
+			animateProgressbar();
+		}
+
+		window.addEventListener("scroll", function () {
+			if (window.pageYOffset >= skillsBlockOffsetTop - window.innerHeight) {
+				animateProgressbar();
+			}
+		});
+	} else {
+		animateProgressbar();
+	}
 
 
-	editorSkill.animate(0.5);
-	htmlSkill.animate(0.9);
-	cssSkill.animate(0.7);
-	preprocessSkill.animate(0.7);
-	jquerySkill.animate(0.6);
-	jsSkill.animate(0.6);
-	gulpSkill.animate(0.5);
-	phpSkill.animate(0.3);
+	function animateProgressbar() {
+		editorSkill.animate(0.5);
+		htmlSkill.animate(0.9);
+		cssSkill.animate(0.7);
+		preprocessSkill.animate(0.7);
+		jquerySkill.animate(0.6);
+		jsSkill.animate(0.6);
+		gulpSkill.animate(0.5);
+		phpSkill.animate(0.3);
+	}
 
 } //END ONLOAD
