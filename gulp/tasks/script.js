@@ -1,6 +1,6 @@
 module.exports = function () {
 	$.gulp.task("scripts:libs", function () {
-		return $.gulp.src(["node_modules/jquery/dist/jquery.min.js", "node_modules/swiper/swiper-bundle.min.js", "src/static/js/lazysizes.min.js"])
+		return $.gulp.src(["node_modules/jquery/dist/jquery.min.js", "node_modules/swiper/swiper-bundle.min.js", "src/static/js/lazysizes.min.js", "node_modules/progressbar.js/dist/progressbar.min.js"])
 			.pipe($.gp.concat("libs-min.js"))
 			.pipe($.gulp.dest("build/js/"))
 			.pipe($.bs.reload({
