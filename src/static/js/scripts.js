@@ -7,6 +7,65 @@
 
 //?JS BLOCK
 window.onload = () => {
+	let navLinks = document.querySelectorAll(".nav__link");
+	let aboutBlock = document.querySelector("#about").offsetTop;
+	let skillsBlock = document.querySelector("#skills").offsetTop;
+	let portfolioBlock = document.querySelector("#portfolio").offsetTop;
+	let feedbackBlock = document.querySelector("#feedback").offsetTop;
+
+	function defineSectionMenu () {
+		if(window.pageYOffset >= aboutBlock && window.pageYOffset < skillsBlock) {
+			installMenu("#about");
+		} else if(window.pageYOffset >= skillsBlock && window.pageYOffset < portfolioBlock) {
+			installMenu("#skills");
+		} else if(window.pageYOffset >= portfolioBlock && window.pageYOffset < feedbackBlock) {
+			installMenu("#portfolio");
+		} else if(window.pageYOffset >= feedbackBlock) {
+			installMenu("#feedback");
+		} else {
+			installMenu("#home");
+		}
+	}
+
+	function defineSectionMenu2 () {
+		if(wrapper >= aboutBlock && wrapper < skillsBlock) {
+			installMenu("#about");
+		} else if(wrapper >= skillsBlock && wrapper < portfolioBlock) {
+			installMenu("#skills");
+		} else if(wrapper >= portfolioBlock && wrapper < feedbackBlock) {
+			installMenu("#portfolio");
+		} else if(wrapper >= feedbackBlock) {
+			installMenu("#feedback");
+		} else {
+			installMenu("#home");
+		}
+	}
+
+	function installMenu (name) {
+		navLinks.forEach((item) => {
+			item.classList.remove("nav__link_active");
+		});
+		document.querySelector("a.nav__link[href='"+name+"']").classList.add("nav__link_active");
+	}
+
+	defineSectionMenu();
+
+	let wrapper;
+	let count = 0;
+
+	//?SCROLL WINDOW
+		window.addEventListener("scroll", () => {
+				if(count == 0) {
+					defineSectionMenu();
+				}
+		});
+
+	if(window.innerWidth <= 1100) {
+		document.querySelector(".wrapper").addEventListener("scroll", () => {
+			wrapper = document.querySelector(".wrapper").scrollTop;
+			defineSectionMenu2();
+		});
+	}
 
 	//!Menu
 	let burger = document.querySelector(".burger"),
@@ -40,7 +99,6 @@ window.onload = () => {
 	});
 
 	//?SELECT IN THE MENU
-	let navLinks = document.querySelectorAll(".nav__link");
 	let homeLinks = document.querySelectorAll(".home__button");
 	
 	navLinks.forEach((item) => {
@@ -52,7 +110,7 @@ window.onload = () => {
 
 			this.classList.add("nav__link_active");
 			animateScrollTop.call(this);
-		})
+		});
 	});
 
 	homeLinks.forEach((item) => {
@@ -66,6 +124,7 @@ window.onload = () => {
 			let link = this.getAttribute("href");
 			let block = document.querySelector(link);
 			let offsetTopBlock = block.offsetTop;
+			count = 1;
 
 			if(window.innerWidth <= 1100) {
 				let header = document.querySelector(".header");
@@ -90,7 +149,11 @@ window.onload = () => {
 					left: 0,
 					behavior: "smooth"
 				});
-			}			
+
+				setTimeout(() => {
+					count = 0;
+				}, 1000);
+			}
 	}
 
 	//? Home Slider
