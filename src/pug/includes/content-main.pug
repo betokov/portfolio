@@ -1,7 +1,7 @@
 main.main
 	h1.visually-hidden Портфолио Бетокова Барасби
 
-	section.home
+	section.home#home
 		.home__slider.swiper-container
 			.swiper-wrapper
 
@@ -23,7 +23,7 @@ main.main
 						p.home__description The place where I grow with great inspiration
 						button.home__button.btn(type="button") What i do
 
-	section.about
+	section.about#about
 		.container
 			.about__column
 				.about__img
@@ -96,7 +96,7 @@ main.main
 						p.work__do Верстка многостраничных сайтов, лендингов.
 						p.work__technology #[b Стек технологий: ] HTML5, CSS3, JQUERY, PHP, GIT.
 
-	section.extension
+	section.extension#skills
 		.container
 
 			h2.extension__title.main-title навыки
@@ -142,5 +142,27 @@ main.main
 					.skills__skill.skills__skill_php
 					h3.skills__title Php/Mysql
 					p.skills__description Работа с формами. Вывод, добавление и изменение информации в базе данных.
+
+	section.portfolio#portfolio
+		.container
+			.portfolio__title.main-title Портфолио
+			.portfolio__description Разработанные web-приложения с описанием примененных технологий.
+
+	section.feedback#feedback
+		.container
+			.feedback__title.main-title Обратная связь
+			.feedback__description Оставьте мне сообщение. Я отвечу в ближайшее время!
+
+			form.feedback__form.form(name="form")
+				.feedback__block
+					label.form__label.feedback__label(aria-label="Имя")
+						input.form__input(type="text" placeholder="Имя" name="name" required)
+
+					label.form__label.feedback__label(aria-label="Адрес электронной почты")
+						input.form__input(type="email" placeholder="Email" name="email" required)
 				
-		
+				textarea.form__textarea.feedback__textarea(aria-label="Сообщение" placeholder="Сообщение" name="message" required)
+
+				button.form__button.btn.feedback__btn(type="submit") Отправить сообщение
+
+
